@@ -1,0 +1,45 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  } 
+  
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .subject-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .subject-button {
+    margin-top: 15px;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    /* font-family: sans-serif; */
+    
+  }
+  
+  .subject-button:hover {
+    background-color: #0707078f;
+  }
+
+  .subject-image {
+    width: 100%; /* Adjust the size as needed */
+    height: 120px;
+    border-radius: 10px;
+    margin-right: 10px; /* Adjust spacing */
+  }

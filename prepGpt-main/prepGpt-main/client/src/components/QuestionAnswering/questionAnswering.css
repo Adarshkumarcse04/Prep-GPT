@@ -1,0 +1,227 @@
+.home{
+  /* background-color: rgba(239, 239, 239, 0.989); */
+  /* background-color: #5d5c66ce; */
+  /* --tw-bg-opacity: 0.81;
+  background-color: rgba(52,53,65,var(--tw-bg-opacity)); */
+
+  font-weight: 500;
+  background: url(ai_5.jpg);
+   /* opacity: 0.8; */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  font-size: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #41414e03;
+  color: black;
+  border: 1px light #908c8c;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 0.5px solid #3b3939;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 6px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.speak-answer-btn,
+.stop-answer-btn {
+  padding: 4px 8px;
+  margin-right: 8px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5c4caf;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.speak-answer-btn:hover,
+.stop-answer-btn:hover {
+  background-color: #4645a0;
+}
+
+.speak-answer-btn:disabled,
+.stop-answer-btn:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+
+textarea{
+  padding: 6px 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  /* font-weight: 500; */
+  text-align: left;
+  text-align: justify;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* import React, { useState } from 'react';
+import TextToSpeech from 'react-text-to-speech';
+import './questionAnswering.css';
+import { useLocation } from 'react-router-dom';
+
+function QuestionAnswering() {
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
+  const [fetching, setFetching] = useState(false);
+
+  // Get the subject name from url
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const subject = searchParams.get("subject");
+
+  // Fetchin question from backend
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setFetching(true); // Set fetching to true when the request is initiated
+      const response = await fetch('http://localhost:5000/api/quesans', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt: question })
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      setAnswer(data.data);
+      // speakAnswer(data.data);
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+      setFetching(false); // Set fetching to false whether the request succeeds or fails
+    }
+  };
+
+  // const speakAnswer = (text) => {
+  //   const synth = window.speechSynthesis;
+  //   const utterance = new SpeechSynthesisUtterance(text);
+  //   synth.speak(utterance);
+  // };
+
+  return (
+    <div className="home">
+    <div className='container'>
+      <h1>prepGpt</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder={`Tell me what do you want to revise from ${subject}`}
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+        />
+        <button type="submit">Ask</button>
+      </form>
+      {fetching && (
+        <div>
+          <p>Fetching the answer...</p>
+        </div>
+      )}
+      {answer && !fetching && (
+        <div>
+          <h2>Answer:</h2>
+          <p>{answer}</p>
+          /* Add TextToSpeech component */
+          /* <TextToSpeech
+              text={answer}
+              voice={{
+                lang: 'en-US',
+                name: 'Google US English',
+                rate: 1.5,
+                pitch: 1,
+                volume: 1,
+              }}
+          />
+        </div>
+      )}
+    </div>
+    </div>
+  );
+}
+
+export default QuestionAnswering; */ 
